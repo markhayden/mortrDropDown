@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Font Drop Down | Demo | markhayden.me</title>
+	
+	<!-- IMPORT GOOGLE FONTS (delete in production) -->
+	<link href='http://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300' rel='stylesheet' type='text/css'>
+	
+	<!-- IMPORT JQUERY (delete in production) -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+
+	<!-- IMPORT FONT JS -->
+	<script src="js/mortrFontDrop.js"></script>
+
+	<style>
+		/* MAKE IT PRETTY FOR DEMO ((delete in production)) */
+		body{background:#000; font-family: 'Roboto Book 300', sans-serif; padding:100px 0 0 0; margin:0;}
+		#shameless-plug{width:100%; position:fixed; bottom:0; background:#666; color:#FFF; font-size:12px; padding:5px;}
+		#shameless-plug p{text-align:center; padding:2px; margin:0;}
+		#shameless-plug p a{color:#FFF; text-decoration:none;}
+		#shameless-plug p a:hover{color:#92c62e;}
+
+		/* BASIC FIELD STYLES */
+		#mortrFontWrap{width:350px; position:relative; margin:auto;}
+		#mortrDropTitle{background:#FFF; width:100%; cursor:pointer; position:relative; border:0px solid #A6A6A6; padding:5px; color:#000;}
+		#mortrDropTitle h2{padding:3px 2px 2px 7px; margin:0; font-size:18px; font-weight:normal;}
+		#mortrFontList{position:absolute; left:0; display:none; width:100%;}
+		#mortrOptions{width:350px; list-style:none; color:#000; padding:5px; background:#CCC; margin:0;}
+			#mortrOptions li{display:block; padding:5px; font-size:14px; font-weight:normal;}
+			#mortrOptions li:hover{background:#92c62e; color:#FFF; cursor:pointer;}
+			#mortrOptions li a{display:block; text-decoration:none;}
+			.mortrArrows{width:20px; height:20px; background:url(arrow.svg) no-repeat; background-size: 100%; position:absolute; z-index:99; right:5px; top:8px;}
+		
+		/* DEFINE CUSTOM FONTS HERE */
+		#ptsans{font-family: 'PT Sans Caption', sans-serif;}
+		#times{font-family:"Times New Roman", Times, serif;}
+		#libre{font-family: 'Libre Baskerville', serif;}
+	</style>
+</head>
+
+<body>
+	<!-- HIDEEN FORM FIELD WHERE DROP DOWN DATA IS PASSED -->
+	<form action="#" method="post">
+	    <input name="mortrFontField" id="mortrFontField" type="hidden" value=""/>
+	</form>
+
+	<!-- BEGIN THE DROP DOWN CREATION -->
+	<div id="mortrFontWrap">
+	    <div id="mortrDropTitle">
+	        <h2>Choose Font</h2>
+	        <div class="mortrArrows"></div>
+	    </div><!-- end mortrDropTitle -->
+	    
+	    <!-- EACH LIST ITEM WILL REPRESENT A DROP DOWN ROW (valPass VARIABLE IS WHAT GETS PASSED TO HIDDEN FIELD) -->
+	    <div id="mortrFontList">
+	        <ul id="mortrOptions">
+	            <li id="ptsans" valPass="psans">PT Sans Caption</li>
+	            <li id="times" valPass="times">Times New Roman</li>
+	            <li id="libre" valPass="libre">Libre Baskerville</li>
+	        </ul>​<!-- end mortrOptions -->
+	    </div><!-- end mortrFontList -->
+	</div><!-- end mortrFontWrap -->
+
+	<div id="shameless-plug">
+		<p>Created by: Mark Hayden | <a href="http://markhayden.me">markhayden.me</a></p>
+	</div>
+</body>
+</html>
